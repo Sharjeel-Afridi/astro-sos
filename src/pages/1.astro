@@ -6,7 +6,7 @@ import HeaderLayout from '../layouts/HeaderLayout.astro'
   <div class='form'>
     <h1>Who needs help?</h1>
     <p class='steps'>Step 1 of 3</p>
-    <form>
+    <form transition:persist>
       <fieldset>
         <legend>How many dogs need help?</legend>
         <div class='radio-btn'>
@@ -49,9 +49,11 @@ import HeaderLayout from '../layouts/HeaderLayout.astro'
       </fieldset>
     </form>
     <footer>
-      <a href={'/0'} class='btn nav-btn prev' type='button'> Previous</a>
-      <a href={'/2'} class='btn nav-btn next' type='button'>
-        Next
+      <a href={'/0'}>
+        <button class='btn nav-btn prev' type='button'> Previous</button>
+      </a>
+      <a href={'/2'}>
+        <button class='btn nav-btn next' type='button'> Next</button>
       </a>
     </footer>
   </div>

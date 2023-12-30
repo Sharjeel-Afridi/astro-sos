@@ -10,7 +10,7 @@ const navigation = [
 ---
 
 <Base>
-  <div class='app'>
+  <div class='app' transition:animate='slide'>
     <header class='header'>
       <nav>
         <button id='menu-btn' aria-label='menu-bar' type='button'>
@@ -31,11 +31,44 @@ const navigation = [
       </nav>
       <div class={`menu-bg`}></div>
     </header>
+
     <slot />
   </div>
 </Base>
 
 <script>
+  document.addEventListener('astro:page-load', () => {
+    const list = document.querySelector('ul.menu-links')
+    const bg = document.querySelector('div.menu-bg')
+    const menu = document.querySelector('#menu-btn') as HTMLElement
+    const links = document.querySelectorAll(
+      'a.nav-link'
+    ) as NodeListOf<HTMLElement>
+
+    const hide = () => {
+      bg?.classList.remove('show')
+      list?.classList.remove('show')
+    }
+    const show = () => {
+      bg?.classList.add('show')
+      list?.classList.add('show')
+    }
+
+    const toggle = () => {
+      bg?.classList.toggle('show')
+      list?.classList.toggle('show')
+    }
+
+    menu.onclick = toggle
+
+    links.forEach((link) => {
+      link.onblur = hide
+      link.onclick = toggle
+      link.onfocus = show
+    })
+  })
+
+  // In case View ransition fails
   const list = document.querySelector('ul.menu-links')
   const bg = document.querySelector('div.menu-bg')
   const menu = document.querySelector('#menu-btn') as HTMLElement

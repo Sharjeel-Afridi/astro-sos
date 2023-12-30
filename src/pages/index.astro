@@ -1,12 +1,21 @@
 ---
-import Formular from '../components/Formular'
-import Header from '../components/Header'
-import BaseLayout from '../layouts/Base.astro'
+import HeaderLayout from '../layouts/HeaderLayout.astro'
 ---
 
-<BaseLayout>
-  <div class='app'>
-    <Header client:idle/>
-    <Formular client:idle/>
+<HeaderLayout>
+  <div class='home'>
+    <img src={'/home.png'} alt='' width='320' height='auto' />
+    <p id='home-p'>
+      If you see an abandoned dog on the street, please help by filling out the
+      form in this app. An animal welfare organisation nearby will be notified
+      and help the animal as soon as possible.
+    </p>
+    <a
+      href={'/1'}
+      class='btn home-btn'
+      type='submit'
+    >
+      Report animal
+    </a>
   </div>
-</BaseLayout>
+</HeaderLayout>
