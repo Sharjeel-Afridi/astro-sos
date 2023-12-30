@@ -1,6 +1,25 @@
 import { map } from 'nanostores'
-export const state = map({
-  step: 1,
+
+
+export type State =  {step: string;
+  one: string;
+  two: string;
+  more: string;
+  type: string;
+  small: string;
+  middle: string;
+  large: string;
+  when: string;
+  position: string;
+  good: string;
+  anxious: string;
+  aggressive: string;
+  wounded: string;
+  unknown: string;
+  }
+
+const state = map<State>({
+  step: '1',
   one: '',
   two: '',
   more: '',
@@ -16,3 +35,5 @@ export const state = map({
   wounded: '',
   unknown: '',
 })
+
+export default state
