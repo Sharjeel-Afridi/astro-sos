@@ -1,47 +1,47 @@
-# Astro Starter Kit: Minimal
+# Description
 
-```sh
-npm create astro@latest -- --template minimal
-```
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+This app will help abandoned animals get help from Animal welfare organizations
+all over the world when people reporting them via this app.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+The idea is that when reporting an animal, the user will start filling out a form
+about the animal's situation and location.
+If people want to leave their contact information in the last stage, this should
+give them the possibility to stay connected with the NGOs and get information
+about the condition of the animal.
+When submitting the form, the form should be sent to the nearest NGO station.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Demo
 
-## 🧞 Commands
+Live view by clicking the badge: [![Netlify Status](https://api.netlify.com/api/v1/badges/f9a7f8d3-58ca-44ed-a038-ae8d2efd31a5/deploy-status)](https://sos-animal.netlify.app/)
 
-All commands are run from the root of the project, from a terminal:
+You can also clone the project and open it in localhost, or enjoy the preview
+video below instead :smile:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+https://user-images.githubusercontent.com/54622834/127658950-b1964a1c-dfc3-4853-be04-9c14a35f569c.mov
 
-## 👀 Want to learn more?
+# Contribution
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To contribute to this project please check out the [contribution guidelines].
+
+## Prerequisits
+
+Before cloning/forking this project, make sure you have the following tools installed:
+
+- [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/download/)
+
+## Installation
+
+1. Fork the project
+2. Clone the project
+3. Follow the instructions in the console:
+   1. Navigate to the project directory `cd astro-sos`
+   2. Install the dependencies `pnpm install`
+   3. Run the project `pnpm dev --open`
