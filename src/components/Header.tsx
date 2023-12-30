@@ -1,3 +1,4 @@
+import '../styles/menu.css'
 import { useState } from 'preact/hooks';
 
 function Header() {
@@ -21,7 +22,7 @@ function Header() {
           aria-label='menu-bar'
           type='button'
         >
-          {/* <i className='fa fa-bars' /> */}
+          <i className='i-fa-solid-bars' />
         </button>
         <ul className={`menu-links ${isOpen ? 'show' : ''}`}>
           {navigation.map((nav) => (
