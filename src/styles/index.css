@@ -143,6 +143,7 @@ h2 {
 }
 
 .btn {
+  display: block;
   border: none;
   cursor: pointer;
   background-color: $yellow;

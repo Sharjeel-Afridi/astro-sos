@@ -1,0 +1,22 @@
+---
+import HeaderLayout from '../layouts/HeaderLayout.astro'
+---
+
+<HeaderLayout>
+  <div class='home'>
+    <img src={'/home.png'} alt='' width='320' height='auto' />
+    <p id='home-p'>
+      If you see an abandoned dog on the street, please help by filling out the
+      form in this app. An animal welfare organisation nearby will be notified
+      and help the animal as soon as possible.
+    </p>
+    <a
+      href={'/1'}
+      style={{ display: 'block' }}
+      class='btn home-btn'
+      type='submit'
+    >
+      Report animal
+    </a>
+  </div>
+</HeaderLayout>

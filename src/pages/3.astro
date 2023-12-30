@@ -1,0 +1,39 @@
+---
+import HeaderLayout from '../layouts/HeaderLayout.astro'
+const lng = 26.1,
+  lat = 44.4,
+  zoom = 9
+---
+
+<HeaderLayout>
+  <div class='form'>
+    <h1>Where is the dog?</h1>
+    <p class='steps'>Step 3 of 3</p>
+    <form>
+      <div class='map-sidebar'>
+        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+      </div>
+      <div class='map-container'>
+        <iframe
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64667.87727006931!2d26.012817441117452!3d44.43505026466841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBukarest%2C%20Rum%C3%A4nien!5e0!3m2!1sde!2sat!4v1649609187524!5m2!1sde!2sat'
+          width='600'
+          height='450'
+          title='Bukarest City '
+          style={{ border: 0 }}
+          allowfullscreen
+          loading='lazy'
+          referrer-policy='no-referrer-when-downgrade'></iframe>
+      </div>
+      <input
+        placeholder=' loaction, area, neighborhood,..'
+        type='text'
+        aria-label='location'
+       
+      />
+    </form>
+    <footer>
+      <a href={'/2'} class='btn nav-btn prev' type='button'> Previous</a>
+      <a href={'/success'} class='btn nav-btn submit' type='submit'> Report</a>
+    </footer>
+  </div>
+</HeaderLayout>

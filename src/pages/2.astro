@@ -1,0 +1,68 @@
+---
+import HeaderLayout from "../layouts/HeaderLayout.astro";
+---
+<HeaderLayout>
+  <div class='form'>
+    <h1>Extra information</h1>
+    <p class='steps'>Step 2 of 3</p>
+    <form>
+      <label html-for='type'>
+        What type of dog is it?
+        <input
+          type='text'
+          id='type'
+          name='type'
+          placeholder=' young, old, Laprador, Husky,..'
+          
+        />
+      </label>
+      <fieldset class='dog-size'>
+        <legend>How big is the dog?</legend>
+        <div class='checkbox-container'>
+          <label html-for='small' class='checkbox'>
+            <input
+              type='checkbox'
+              id='small'
+              name='size'
+            />
+            Small
+          </label>
+          <label html-for='middle' class='checkbox'>
+            <input
+              type='checkbox'
+              id='middle'
+              name='size'
+            />
+            Middle
+          </label>
+          <label html-for='big' class='checkbox'>
+            <input
+              type='checkbox'
+              id='big'
+              name='size'
+            />
+            Big
+          </label>
+        </div>
+      </fieldset>
+      <label html-for='time'>
+        When did you see the dog?
+        <input
+          placeholder=' morning, noon, 4pm,..'
+          type='text'
+          id='time'
+          name='time'
+      
+        />
+      </label>
+    </form>
+    <footer>
+      <a href="'/1" class='btn nav-btn prev' type='button'>
+        Previous
+      </a>
+      <a href="/3" class='btn nav-btn next' type='button'>
+        Next
+      </a>
+    </footer>
+  </div>
+</HeaderLayout>
