@@ -1,0 +1,23 @@
+{
+  "name": "astro-sos",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^3.0.2",
+    "astro": "^4.0.8",
+    "nanostores": "^0.9.5",
+    "preact": "^10.19.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.2",
+    "postcss-simple-vars": "^7.0.1"
+  }
+}

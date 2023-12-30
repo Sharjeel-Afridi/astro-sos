@@ -1,0 +1,12 @@
+---
+import Formular from '../components/Formular'
+import Header from '../components/Header'
+import BaseLayout from '../layouts/Base.astro'
+---
+
+<BaseLayout>
+  <div class='app'>
+    <Header client:idle/>
+    <Formular client:idle/>
+  </div>
+</BaseLayout>
