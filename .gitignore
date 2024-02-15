@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # editor
 .vscodefirebase\client.ts
+
+
+client.ts
