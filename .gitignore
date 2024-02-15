@@ -21,4 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 # editor
-.vscode
+.vscodefirebase\client.ts
