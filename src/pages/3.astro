@@ -4,6 +4,8 @@ import HeaderLayout from '../layouts/HeaderLayout.astro'
 const lng = 26.1,
   lat = 44.4,
   zoom = 9
+
+
 ---
 <script src="../index.js"></script>
 <HeaderLayout>
@@ -12,7 +14,7 @@ const lng = 26.1,
     <p class='steps'>Step 3 of 3</p>
     <form transition:persist>
       <div class='map-sidebar'>
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        
       </div>
       <div class='map-container'>
         <iframe
