@@ -1,7 +1,7 @@
 const card = document.querySelector('.map-container');
 const map = document.getElementById('map');
 const mapSidebar = document.querySelector('.map-sidebar');
-
+const locationInput = document.getElementById('location');
 
 if( "geolocation" in navigator){
     let sidebarContent = document.createElement('p');
