@@ -1,11 +1,9 @@
 ---
 import HeaderLayout from '../layouts/HeaderLayout.astro'
+import Footer from '../layouts/Footer.astro';
 
-const lng = 26.1,
-  lat = 44.4,
-  zoom = 9
 ---
-<script src="../index.js"></script>
+
 <HeaderLayout>
   <div class='form'>
     <h1>Where is the dog?</h1>
@@ -28,13 +26,6 @@ const lng = 26.1,
        
       />
     </form>
-    <footer>
-      <a href={'/2'}>
-        <button class='btn nav-btn prev' type='button'> Previous</button>
-      </a>
-      <a href={'/success'}>
-        <button class='btn nav-btn next' type='button'> Next</button>
-      </a>
-    </footer>
+    <Footer />
   </div>
 </HeaderLayout>
