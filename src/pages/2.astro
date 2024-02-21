@@ -7,7 +7,7 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
     <p class='steps'>Step 2 of 3</p>
     <form  transition:persist>
       <label html-for='type'>
-        What type of dog is it?
+        <legend>What type of dog is it?</legend>
         <input
           type='text'
           id='type'
@@ -46,7 +46,7 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
         </div>
       </fieldset>
       <label html-for='time'>
-        When did you see the dog?
+        <legend>When did you see the dog?</legend>
         <input
           placeholder=' morning, noon, 4pm,..'
           type='text'
