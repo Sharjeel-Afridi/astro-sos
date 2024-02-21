@@ -3,14 +3,13 @@ import HeaderLayout from '../layouts/HeaderLayout.astro'
 import Footer from '../layouts/Footer.astro';
 
 ---
-
 <HeaderLayout>
   <div class='form'>
     <h1>Where is the dog?</h1>
     <p class='steps'>Step 3 of 3</p>
     <form transition:persist>
       <div class='map-sidebar'>
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        Longitude: {0} | Latitude: {0} | Zoom: {100}
       </div>
       <div class='map-container'>
         <iframe
