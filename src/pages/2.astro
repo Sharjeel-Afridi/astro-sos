@@ -1,5 +1,6 @@
 ---
 import HeaderLayout from "../layouts/HeaderLayout.astro";
+import Footer from "../layouts/Footer.astro";
 ---
 <HeaderLayout>
   <div class='form'>
@@ -7,7 +8,7 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
     <p class='steps'>Step 2 of 3</p>
     <form  transition:persist>
       <label html-for='type'>
-        What type of dog is it?
+        <legend>What type of dog is it?</legend>
         <input
           type='text'
           id='type'
@@ -46,7 +47,7 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
         </div>
       </fieldset>
       <label html-for='time'>
-        When did you see the dog?
+        <legend>When did you see the dog?</legend>
         <input
           placeholder=' morning, noon, 4pm,..'
           type='text'
@@ -56,13 +57,6 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
         />
       </label>
     </form>
-    <footer>
-      <a href={'/1'}>
-        <button class='btn nav-btn prev' type='button'> Previous</button>
-      </a>
-      <a href={'/3'}>
-        <button class='btn nav-btn next' type='button'> Next</button>
-      </a>
-    </footer>
+    <Footer />
   </div>
 </HeaderLayout>

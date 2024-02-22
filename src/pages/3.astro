@@ -1,25 +1,20 @@
 ---
 import HeaderLayout from '../layouts/HeaderLayout.astro'
-
-const lng = 26.1,
-  lat = 44.4,
-  zoom = 9
-
+import Footer from '../layouts/Footer.astro';
 
 ---
-<script src="../index.js"></script>
 <HeaderLayout>
   <div class='form'>
     <h1>Where is the dog?</h1>
     <p class='steps'>Step 3 of 3</p>
     <form transition:persist>
       <div class='map-sidebar'>
-        
+        Longitude: {0} | Latitude: {0} | Zoom: {100}
       </div>
       <div class='map-container'>
         <iframe
           width='100%'
-          height='270px'
+          height='300'
           id="map"
           ></iframe>
       </div>
@@ -27,17 +22,35 @@ const lng = 26.1,
         placeholder=' loaction, area, neighborhood,..'
         type='text'
         aria-label='location'
-        id="location"
        
       />
     </form>
-    <footer>
-      <a href={'/2'}>
-        <button class='btn nav-btn prev' type='button'> Previous</button>
-      </a>
-      <a href={'/success'}>
-        <button class='btn nav-btn next' type='button'> Next</button>
-      </a>
-    </footer>
+    <Footer />
   </div>
 </HeaderLayout>
+
+
+<script>
+  const card = document.querySelector('.map-container');
+  const map = document.getElementById('map');
+  const mapSidebar = document.querySelector('.map-sidebar');
+
+  let lat = 0,
+      lng = 0,
+      zoom = 0;
+
+  if( "geolocation" in navigator){
+      navigator.geolocation.getCurrentPosition(position => {
+          map.src = `https://maps.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}&output=embed`
+          console.log(position)
+          lat = position.coords.latitude;
+          lng = position.coords.longitude;
+          zoom = 100;
+          mapSidebar.innerHTML = `Longitude: ${lng} | Latitude: ${lat} | Zoom: ${zoom}`;
+      })
+      console.log(lat)
+  }else {
+      map.remove();
+  }
+
+</script>
