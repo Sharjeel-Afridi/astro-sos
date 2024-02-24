@@ -1,7 +1,7 @@
 ---
 import { app } from "../firebase/server";
 import { getAuth } from "firebase-admin/auth";
-import Layout from "../layouts/HeaderLayout.astro";
+import HeaderLayout from "../layouts/HeaderLayout.astro";
 
 /* Check if the user is authenticated */
 const auth = getAuth(app);
@@ -14,7 +14,7 @@ if (Astro.cookies.has("session")) {
 }
 ---
 
-<Layout title="Sign in">
+<HeaderLayout title="Sign in">
   <h1>Sign in</h1>
   <p>New here? <a href="/register">Create an account</a></p>
   <form action="/api/auth/signin" method="post">
@@ -25,7 +25,7 @@ if (Astro.cookies.has("session")) {
     <button type="submit">Login</button>
   </form>
   <button id="google">Sign in with Google</button>
-</Layout>
+</HeaderLayout>
 <script>
   import {
     getAuth,

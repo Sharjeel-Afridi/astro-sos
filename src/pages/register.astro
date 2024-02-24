@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/HeaderLayout.astro";
+import HeaderLayout from "../layouts/HeaderLayout.astro";
 ---
 
-<Layout title="Register">
+<HeaderLayout title="Register">
   <h1>Register</h1>
   <p>Already have an account? <a href="/signin">Sign in</a></p>
   <form action="/api/auth/register" method="post">
@@ -14,4 +14,4 @@ import Layout from "../layouts/HeaderLayout.astro";
     <input type="password" name="password" id="password" />
     <button type="submit">Login</button>
   </form>
-</Layout>
+</HeaderLayout>

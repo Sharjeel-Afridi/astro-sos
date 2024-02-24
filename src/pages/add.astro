@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/HeaderLayout.astro";
+import HeaderLayout from "../layouts/HeaderLayout.astro";
 ---
 
-<Layout title="Add a new friend">
+<HeaderLayout title="Add a new friend">
   <h1>Add a new friend</h1>
   <form method="post" action="/api/friends">
     <label for="name">Name</label>
@@ -13,4 +13,4 @@ import Layout from "../layouts/HeaderLayout.astro";
     <input type="checkbox" id="isBestFriend" name="isBestFriend" />
     <button type="submit">Add friend</button>
   </form>
-</Layout>
+</HeaderLayout>
