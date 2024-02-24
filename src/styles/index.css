@@ -74,6 +74,7 @@ h2 {
   color: $darkBlue;
   float: right;
   padding-right: 15px;
+  border-radius: 0 0 5px 5px;
 }
 
 .menu-links {
