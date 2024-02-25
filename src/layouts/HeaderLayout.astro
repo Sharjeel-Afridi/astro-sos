@@ -38,67 +38,11 @@ const navigation = [
 </Base>
 
 <script>
-  import afterSwap from '../utils'
+  import { afterSwap, pageLoad } from '../utils'
   document.addEventListener('astro:after-swap', afterSwap)
 
-  document.addEventListener('astro:page-load', () => {
-    const list = document.querySelector('ul.menu-links')
-    const bg = document.querySelector('div.menu-bg')
-    const menu = document.querySelector('#menu-btn') as HTMLElement
-    const links = document.querySelectorAll(
-      'a.nav-link'
-    ) as NodeListOf<HTMLElement>
-
-    const hide = () => {
-      bg?.classList.remove('show')
-      list?.classList.remove('show')
-    }
-    const show = () => {
-      bg?.classList.add('show')
-      list?.classList.add('show')
-    }
-
-    const toggle = () => {
-      bg?.classList.toggle('show')
-      list?.classList.toggle('show')
-    }
-
-    menu.onclick = () =>  toggle()
-
-    links.forEach((link) => {
-      link.onblur =  () => hide()
-      link.onclick = () => toggle()
-      link.onfocus = () => show()
-    })
-  })
+  document.addEventListener('astro:page-load', () => pageLoad())
 
   // In case View ransition fails
-  const list = document.querySelector('ul.menu-links')
-  const bg = document.querySelector('div.menu-bg')
-  const menu = document.querySelector('#menu-btn') as HTMLElement
-  const links = document.querySelectorAll(
-    'a.nav-link'
-  ) as NodeListOf<HTMLElement>
-
-  const hide = () => {
-    bg?.classList.remove('show')
-    list?.classList.remove('show')
-  }
-  const show = () => {
-    bg?.classList.add('show')
-    list?.classList.add('show')
-  }
-
-  const toggle = () => {
-    bg?.classList.toggle('show')
-    list?.classList.toggle('show')
-  }
-
-  menu.onclick = toggle
-
-  links.forEach((link) => {
-    link.onblur = hide
-    link.onclick = toggle
-    link.onfocus = show
-  })
+  pageLoad(document)
 </script>
