@@ -1,0 +1,48 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+
+export interface Props {
+  viewTransitions?: boolean
+  requireInputs?: boolean
+  title?: string
+}
+
+const { viewTransitions = true, requireInputs = true, title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='theme-color' content='#274c77' />
+    <meta
+      name='description'
+      content='App created to notify animal welfare organizations when seeing an abandoned dog in the streets.'
+    />
+    <meta
+      property='og:description'
+      content='App created to notify animal welfare organizations when seeing an abandoned dog in the streets.'
+    />
+    <meta property='og:title' content='Astro SOS Animals' />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://astro-sos.netlify.app/' />
+    <meta property='og:image' content='/thumbnail-sos.png' />
+    <meta property='og:determiner' content='' />
+    <meta property='og:locale' content='en_US' />
+
+    <link rel='manifest' href='/manifest.json' />
+    <link rel='stylesheet' href='https://unpkg.com/@picocss/pico' />
+
+    <title>{title ? title + ' | ' : ''}Rescue Me</title>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    {viewTransitions && <ViewTransitions />}
+  </head>
+  <body>
+    <main class='container'>
+      <slot />
+    </main>
+
+    {requireInputs && <script src='../lib/requireAllInputs.ts'></script>}
+  </body>
+</html>
