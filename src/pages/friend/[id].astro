@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Base.astro";
-import { app } from "../../firebase/server";
-import { getFirestore } from "firebase-admin/firestore";
+import db from "../../firebase/server";
 
 interface Friend {
   name: string;
@@ -15,7 +14,6 @@ if (!id) {
   return Astro.redirect("/404");
 }
 
-const db = getFirestore(app);
 const friendsRef = db.collection("friends");
 const friendSnapshot = await friendsRef.doc(id).get();
 

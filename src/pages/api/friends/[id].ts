@@ -1,8 +1,6 @@
 import type { APIRoute } from "astro";
-import { app } from "../../../firebase/server";
-import { getFirestore } from "firebase-admin/firestore";
+import db from "../../../firebase/server";
 
-const db = getFirestore(app);
 const friendsRef = db.collection("friends");
 
 export const POST: APIRoute = async ({ params, redirect, request }) => {
