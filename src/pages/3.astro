@@ -1,8 +1,8 @@
 ---
 import HeaderLayout from '../layouts/HeaderLayout.astro'
-import Footer from '../layouts/Footer.astro';
-
+import Footer from '../layouts/Footer.astro'
 ---
+
 <HeaderLayout>
   <div class='form'>
     <h1>Where is the dog?</h1>
@@ -12,45 +12,38 @@ import Footer from '../layouts/Footer.astro';
         Longitude: {0} | Latitude: {0} | Zoom: {100}
       </div>
       <div class='map-container'>
-        <iframe
-          width='100%'
-          height='300'
-          id="map"
-          ></iframe>
+        <iframe width='100%' height='300' id='map'></iframe>
       </div>
       <input
         placeholder=' loaction, area, neighborhood,..'
         type='text'
         aria-label='location'
-       
       />
     </form>
     <Footer />
   </div>
 </HeaderLayout>
 
-
 <script>
-  const card = document.querySelector('.map-container');
-  const map = document.getElementById('map');
-  const mapSidebar = document.querySelector('.map-sidebar');
+  const card = document.querySelector('.map-container')
+  const map = document.getElementById('map') as HTMLImageElement
+  const mapSidebar = document.querySelector('.map-sidebar') as HTMLDivElement
 
   let lat = 0,
-      lng = 0,
-      zoom = 0;
+    lng = 0,
+    zoom = 0
 
-  if( "geolocation" in navigator){
-      navigator.geolocation.getCurrentPosition(position => {
-          map.src = `https://maps.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}&output=embed`
-          console.log(position)
-          lat = position.coords.latitude;
-          lng = position.coords.longitude;
-          zoom = 100;
-          mapSidebar.innerHTML = `Longitude: ${lng} | Latitude: ${lat} | Zoom: ${zoom}`;
-      })
-      console.log(lat)
-  }else {
-      map.remove();
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      map.src = `https://maps.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}&output=embed`
+      console.log(position)
+      lat = position.coords.latitude
+      lng = position.coords.longitude
+      zoom = 100
+      mapSidebar.innerHTML = `Longitude: ${lng} | Latitude: ${lat} | Zoom: ${zoom}`
+    })
+    console.log(lat)
+  } else {
+    map.remove()
   }
-
 </script>
