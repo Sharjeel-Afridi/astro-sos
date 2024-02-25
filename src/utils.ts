@@ -16,7 +16,7 @@ export const afterSwap = () => {
   }
 }
 
-export const pageLoad = (document: Document = window.document) => {
+export const pageLoad = () => {
   const list = document.querySelector('ul.menu-links')
   const bg = document.querySelector('div.menu-bg')
   const menu = document.querySelector<HTMLElement>('#menu-btn')

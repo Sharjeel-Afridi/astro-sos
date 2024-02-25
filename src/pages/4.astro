@@ -1,0 +1,20 @@
+---
+import HeaderLayout from '@/layouts/HeaderLayout.astro'
+import Footer from '@/components/Footer.astro'
+---
+
+<HeaderLayout>
+  <div class='form'>
+    <h1>Where is the dog?</h1>
+    <p class='steps'>Step 3 of 3</p>
+    <form transition:persist>
+      <div class='map-sidebar'>
+        Longitude: {0} | Latitude: {0} | Zoom: {100}
+      </div>
+      <div class='map-container'>
+        <iframe width='100%' height='300' id='map'></iframe>
+      </div>
+    </form>
+    <Footer />
+  </div>
+</HeaderLayout>

@@ -41,8 +41,6 @@ const navigation = [
   import { afterSwap, pageLoad } from '../utils'
   document.addEventListener('astro:after-swap', afterSwap)
 
-  document.addEventListener('astro:page-load', () => pageLoad())
+  document.addEventListener('astro:page-load', pageLoad)
 
-  // In case View ransition fails
-  pageLoad(document)
 </script>

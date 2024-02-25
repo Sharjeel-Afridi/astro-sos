@@ -2,11 +2,11 @@
 import '../styles/index.scss'
 import { ViewTransitions } from 'astro:transitions'
 
-export interface Props {
+interface Props {
   title?: string
 }
 
-export const { title } = Astro.props
+export const title = Astro.props?.title
 ---
 
 <!doctype html>
@@ -34,10 +34,10 @@ export const { title } = Astro.props
 
     <title>{title ? title + ' | ' : ''}Rescue Me</title>
     <ViewTransitions />
+    <noscript>You need to enable JavaScript to run this app.</noscript>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <slot />
-    <script src='@/lib/requireAllInputs.ts'></script>
+    <!-- <script src='../lib/requireAllInputs.ts'></script> -->
   </body>
 </html>
