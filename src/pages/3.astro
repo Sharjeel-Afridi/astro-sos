@@ -1,6 +1,6 @@
 ---
-import HeaderLayout from '../layouts/HeaderLayout.astro'
-import Footer from '../layouts/Footer.astro'
+import HeaderLayout from '@/layouts/HeaderLayout.astro'
+import Footer from '@/components/Footer.astro'
 ---
 
 <HeaderLayout>
@@ -25,24 +25,20 @@ import Footer from '../layouts/Footer.astro'
 </HeaderLayout>
 
 <script>
-  const card = document.querySelector('.map-container')
+  // const card = document.querySelector('.map-container')
   const map = document.getElementById('map') as HTMLImageElement
   const mapSidebar = document.querySelector('.map-sidebar') as HTMLDivElement
 
-  let lat = 0,
-    lng = 0,
-    zoom = 0
-
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition((position) => {
-      map.src = `https://maps.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}&output=embed`
       console.log(position)
-      lat = position.coords.latitude
-      lng = position.coords.longitude
-      zoom = 100
-      mapSidebar.innerHTML = `Longitude: ${lng} | Latitude: ${lat} | Zoom: ${zoom}`
+
+      const { latitude, longitude } = position.coords
+      const zoom = 100
+
+      map.src = `https://maps.google.com/maps?q=${latitude},${longitude}&output=embed`
+      mapSidebar.innerHTML = `Longitude: ${longitude} | Latitude: ${latitude} | Zoom: ${zoom}`
     })
-    console.log(lat)
   } else {
     map.remove()
   }

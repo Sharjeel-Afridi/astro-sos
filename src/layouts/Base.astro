@@ -1,11 +1,12 @@
 ---
 import '../styles/index.scss'
 import { ViewTransitions } from 'astro:transitions'
+
 export interface Props {
   title?: string
 }
 
-export const title = Astro.props.title
+export const { title } = Astro.props
 ---
 
 <!doctype html>

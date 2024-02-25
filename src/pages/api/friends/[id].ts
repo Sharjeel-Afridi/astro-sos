@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import db from "../../../firebase/server";
+import db from "@/firebase/server";
 
 const friendsRef = db.collection("friends");
 
