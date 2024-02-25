@@ -1,12 +1,18 @@
 ---
 import '@/styles/index.scss'
+
+interface Props {
+  next: string
+  prev: string
+}
+
+const { prev, next } = Astro.props
 ---
 
-
 <footer>
-    
-    <button class='btn nav-btn prev' id="previous" type='button'> Previous</button>
-    
-    <button class='btn nav-btn next' id="next" type='submit'> Next</button>
-    
+  <a href={prev} class='btn nav-btn prev' id='previous' type='button'>
+    Previous
+  </a>
+
+  <a href={next} class='btn nav-btn next' id='next' type='submit'> Next</a>
 </footer>
